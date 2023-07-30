@@ -8,14 +8,14 @@ function NetlifyFunctions() {
     const response = await fetch("/.netlify/functions/hello-world");
     const data = await response.json();
     setApiResponse(JSON.stringify(data));
-    console.log(data);
+    console.log("data returned from hello-wolld.js:", data);
   };
 
   const getDataFromExpressServer = async () => {
     const response = await fetch("/.netlify/functions/express-server/hello");
     const data = await response.json();
     setApiResponse(JSON.stringify(data));
-    console.log(data);
+    console.log("data returned from express-server.js:", data);
   };
 
   return (
