@@ -18,10 +18,22 @@ function NetlifyFunctions() {
     console.log("data returned from express-server.js:", data);
   };
 
+  const getApiKeyFromExpressServer = async () => {
+    const response = await fetch(
+      "/.netlify/functions/express-server/get-api-key"
+    );
+    const data = await response.json();
+    setApiResponse(JSON.stringify(data));
+    console.log("api key from express-server.js:", data);
+  };
+
   return (
     <div className={styles["App"]}>
       <button onClick={getData}>Fetch Normal Function</button>
       <button onClick={getDataFromExpressServer}>Fetch Express Server</button>
+      <button onClick={getApiKeyFromExpressServer}>
+        Fetch Api Key - Express Server
+      </button>
       <div className={styles["response-output"]}>{apiResponse}</div>
     </div>
   );

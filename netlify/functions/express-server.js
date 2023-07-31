@@ -17,6 +17,13 @@ router.get("/hello", (req, res) => {
   });
 });
 
+router.get("/get-api-key", (req, res) => {
+  res.json({
+    message: "sending api key - from express!",
+    key: `the pai key is ${process.env.SECRET_KEY}`,
+  });
+});
+
 app.use(`/.netlify/functions/express-server`, router);
 
 module.exports = app;
