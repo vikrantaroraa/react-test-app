@@ -10,7 +10,6 @@ const router = express.Router();
 router.get("/hello", (req, res) => {
   res.json({
     message: "hello world - from express!",
-    key: process.env.SECRET_KEY,
     newMessage: "some cryptic message - from express server",
   });
 });
