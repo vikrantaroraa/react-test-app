@@ -25,6 +25,13 @@ router.get("/get-api-key", (req, res) => {
   });
 });
 
+router.get("/new-branch-route", (req, res) => {
+  res.json({
+    message: "sending new branch api key - from express!",
+    key: `the api key imported from env file is: ${process.env.NEW_BRANCH_API_KEY}`,
+  });
+});
+
 app.use(`/.netlify/functions/express-server`, router);
 
 module.exports = app;

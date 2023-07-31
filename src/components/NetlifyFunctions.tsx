@@ -27,6 +27,15 @@ function NetlifyFunctions() {
     console.log("api key from express-server.js:", data);
   };
 
+  const getDataFromNewBranchRoute = async () => {
+    const response = await fetch(
+      "/.netlify/functions/express-server/new-branch-route"
+    );
+    const data = await response.json();
+    setApiResponse(JSON.stringify(data));
+    console.log("api key from express-server.js:", data);
+  };
+
   return (
     <div className={styles["App"]}>
       <button onClick={getData}>Fetch Normal Function</button>
@@ -34,6 +43,7 @@ function NetlifyFunctions() {
       <button onClick={getApiKeyFromExpressServer}>
         Fetch Api Key - Express Server
       </button>
+      <button onClick={getDataFromNewBranchRoute}>New Branch Button</button>
       <div className={styles["response-output"]}>{apiResponse}</div>
     </div>
   );
