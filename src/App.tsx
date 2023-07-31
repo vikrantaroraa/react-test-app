@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ClickIncrease from "./components/ClickIncrease";
 import HoverIncrease from "./components/HoverIncrease";
 import styles from "./App.module.css";
